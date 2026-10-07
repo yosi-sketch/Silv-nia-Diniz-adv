@@ -1,40 +1,32 @@
 {
   "status": "passed",
+  "date": "2026-10-07",
   "widths": [
-    {
-      "viewport": 320,
-      "scroll": 320
-    },
-    {
-      "viewport": 390,
-      "scroll": 390
-    },
-    {
-      "viewport": 768,
-      "scroll": 768
-    },
-    {
-      "viewport": 1024,
-      "scroll": 1024
-    },
-    {
-      "viewport": 1440,
-      "scroll": 1440
-    }
+    320,
+    390,
+    768,
+    1024,
+    1440
   ],
-  "whatsappLinks": 6,
-  "areas": 4,
+  "horizontalOverflow": false,
+  "whatsapp": "5535991154815",
+  "areas": 6,
+  "reviews": 6,
   "checks": [
-    "production page",
-    "metadata",
-    "no old client",
-    "all anchors",
-    "WhatsApp and telephone",
-    "mobile menu",
-    "FAQ",
-    "modal keyboard and focus",
-    "reduced motion",
-    "loaded images",
-    "browser console"
+    "lint",
+    "production build and TypeScript",
+    "internal anchors",
+    "WhatsApp and telephone destinations",
+    "Instagram destination",
+    "mobile menu opens and closes on navigation",
+    "six service modals and Escape dismissal",
+    "FAQ expands with correct contact",
+    "all four image instances loaded",
+    "no browser warnings or errors",
+    "no prior client references in source and documentation"
+  ],
+  "captures": [
+    "silvania-desktop.jpg",
+    "silvania-mobile.jpg"
   ]
 }

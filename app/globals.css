@@ -2,36 +2,36 @@
 
 :root {
   color-scheme: light;
-  --brand-gold: #c79559;
-  --brand-gold-light: #ffe2a6;
-  --brand-gold-dark: #79522d;
-  --brand-ink: #24262a;
-  --brand-ink-soft: #62646a;
-  --brand-ivory: #f8f6f1;
+  --brand-gold: #d0a060;
+  --brand-gold-light: #ffe0b0;
+  --brand-gold-dark: #79552f;
+  --brand-ink: #28231d;
+  --brand-ink-soft: #645e56;
+  --brand-ivory: #faf7f0;
   --brand-paper: #ffffff;
-  --brand-silver: #d8d9dc;
-  --brand-night: #17191c;
+  --brand-sand: #e6d8bf;
+  --brand-night: #141210;
 }
 
 @theme inline {
   --font-serif: var(--font-display), "Cormorant Garamond", Georgia, serif;
   --font-sans: var(--font-body), "Plus Jakarta Sans", system-ui, sans-serif;
-  --color-silver: var(--brand-silver);
+  --color-sand: var(--brand-sand);
   --color-night: var(--brand-night);
   --color-ink: var(--brand-ink);
-  --color-ink-soft: #62646a;
+  --color-ink-soft: var(--brand-ink-soft);
   --color-ivory: var(--brand-ivory);
-  --color-brand-50: #fcfaf6;
-  --color-brand-100: #f7edd9;
+  --color-brand-50: #fdfaf4;
+  --color-brand-100: #f5e9d3;
   --color-brand-200: var(--brand-gold-light);
   --color-brand-300: var(--brand-gold);
-  --color-brand-400: #b48247;
-  --color-brand-500: #9b6d37;
-  --color-brand-600: #875b2f;
-  --color-brand-700: #79522d;
-  --color-brand-800: #624225;
-  --color-brand-900: #433225;
-  --color-brand-950: #101215;
+  --color-brand-400: #bd884a;
+  --color-brand-500: #a5753d;
+  --color-brand-600: #896030;
+  --color-brand-700: #79552f;
+  --color-brand-800: #604023;
+  --color-brand-900: #3e2c1b;
+  --color-brand-950: #0e0c0a;
   --shadow-card: 0 18px 48px rgba(0, 0, 0, 0.1);
 }
 

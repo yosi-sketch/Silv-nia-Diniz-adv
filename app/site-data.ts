@@ -1,19 +1,19 @@
-const name = "Dr. Emmanuel Carlos de Souza";
-const address = "Av. Duque de Caxias, 1.389, 2º andar, Quatorze de Fevereiro, Itabira - MG, CEP 35900-236";
+const name = "Silvânia Diniz Sociedade de Advogados";
+const address = "Rua Misseno de Pádua, 495, Centro, Lavras - MG, CEP 37200-142";
 
 export const office = {
-  name,
-  address,
-  brandName: "Emmanuel Souza",
-  registration: "OAB/MG 232.059",
-  city: "Itabira",
-  phoneDisplay: "(31) 99798-9797",
-  telephone: "tel:+5531997989797",
-  whatsapp: "https://wa.me/5531997989797?text=" + encodeURIComponent(
-    "Olá, Dr. Emmanuel! Gostaria de conversar sobre uma orientação jurídica e agendar um atendimento.",
+  name, address,
+  brandName: "Silvânia Diniz",
+  registration: "OAB/MG 7.814",
+  city: "Lavras",
+  phoneDisplay: "(35) 99115-4815",
+  telephone: "tel:+5535991154815",
+  whatsapp: "https://wa.me/5535991154815?text=" + encodeURIComponent(
+    "Olá! Gostaria de agendar um atendimento com a equipe da Silvânia Diniz sobre uma questão previdenciária.",
   ),
-  maps: "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(`${name}, ${address}`),
-  // Dados do material enviado pelo cliente, sem atualização automática.
-  rating: "5,0",
-  reviewCount: 107,
+  instagram: "https://www.instagram.com/advocaciasilvaniadiniz/",
+  maps: "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(name + ", " + address),
+  // Retrato do material de avaliações fornecido pelo cliente.
+  rating: "4,9",
+  reviewCount: 96,
 } as const;

@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { office } from "./site-data";
-import logo from "../public/emmanuel-logo.png";
+import logo from "../public/Logotipo Jurídico Dourado Silvânia Diniz.png";
 import { useEffect, useRef, useState, type ReactNode } from "react";
 import {
   AnimatePresence,
@@ -13,7 +13,8 @@ import {
 import {
   ArrowRight,
   ArrowUpRight,
-  Gavel,
+  Sprout,
+  Camera,
   HeartHandshake,
   FileText,
   ShieldCheck,
@@ -29,7 +30,7 @@ import {
 const officeName = office.name;
 const whatsappUrl = office.whatsapp;
 const mapsUrl = office.maps;
-const portrait = "/emmanuel-hero.webp";
+const portrait = "/imgi_31_753605420_18327940165256246_2621489893635777785_n.jpg";
 
 const reveal: Variants = {
   hidden: { opacity: 0, y: 22 },
@@ -46,50 +47,58 @@ const stagger: Variants = {
 };
 
 const practiceAreas = [
-  { number: "01", title: "Direito Criminal", icon: ShieldCheck, lead: "Defesa com atenção e responsabilidade",
-    areas: ["Análise individual da situação apresentada", "Orientação sobre documentos e procedimentos", "Acompanhamento das etapas da defesa"],
-    summary: "Uma defesa começa pela escuta. Atenção aos fatos, análise cuidadosa e clareza sobre os próximos passos.",
-    details: "Uma situação criminal pede atenção, discrição e uma análise criteriosa. O atendimento começa pela compreensão dos fatos e dos documentos disponíveis. A partir dessa conversa, o Dr. Emmanuel explica as possibilidades de atuação e o acompanhamento necessário, com respeito à sua história e às particularidades do caso." },
-  { number: "02", title: "Tribunal do Júri", icon: Gavel, lead: "Preparo para os momentos decisivos",
-    areas: ["Estudo dos fatos e dos elementos do processo", "Preparação e organização da defesa", "Orientação e acompanhamento do caso"],
-    summary: "Dedicação ao estudo do processo e à construção da defesa, com comunicação próxima em cada etapa.",
-    details: "A atuação no Tribunal do Júri envolve estudo, preparo e responsabilidade. Cada processo precisa ser compreendido em seus detalhes. O Dr. Emmanuel dedica atenção aos elementos apresentados e à preparação da defesa, mantendo uma comunicação clara sobre o andamento e as etapas do caso." },
-  { number: "03", title: "Direito de Família", icon: HeartHandshake, lead: "Sensibilidade para acolher sua história",
-    areas: ["Orientação em situações de divórcio", "Análise dos documentos e do contexto familiar", "Acompanhamento dos encaminhamentos definidos"],
-    summary: "Questões familiares merecem uma conversa cuidadosa. Orientação para atravessar mudanças com mais clareza.",
-    details: "Mudanças na vida familiar trazem dúvidas e decisões importantes. O atendimento oferece espaço para compreender sua realidade, organizar os documentos e conversar sobre os possíveis encaminhamentos. A orientação em situações de divórcio considera o contexto de cada pessoa, com discrição, atenção e respeito." },
-  { number: "04", title: "Consultoria Jurídica", icon: FileText, lead: "Clareza antes de tomar uma decisão",
-    areas: ["Escuta e compreensão da sua demanda", "Análise inicial de documentos", "Orientação sobre possibilidades e próximos passos"],
-    summary: "Apresente sua dúvida e compreenda os caminhos possíveis com uma orientação acessível e individualizada.",
-    details: "Nem toda demanda começa com um processo. A consulta permite apresentar suas dúvidas, compreender documentos e avaliar as possibilidades de acompanhamento. O Dr. Emmanuel esclarece as condições do atendimento e os próximos passos de forma direta, para que você possa tomar decisões com mais informação." },
+  { number: "01", title: "Aposentadoria urbana", icon: ShieldCheck, lead: "Seu futuro merece uma análise cuidadosa",
+    areas: ["Análise do histórico de contribuições", "Organização de documentos", "Orientação e acompanhamento do pedido"],
+    summary: "Orientação para compreender seu histórico de contribuições e os caminhos para solicitar sua aposentadoria.",
+    details: "Cada trajetória de trabalho é única. Nossa equipe acolhe sua história, analisa os documentos disponíveis e orienta sobre o pedido de aposentadoria urbana, com explicações claras e acompanhamento individualizado." },
+  { number: "02", title: "Aposentadoria rural", icon: Sprout, lead: "Atenção à história de quem trabalha no campo",
+    areas: ["Compreensão da trajetória de trabalho rural", "Organização dos comprovantes disponíveis", "Orientação sobre o pedido ao INSS"],
+    summary: "Escuta e atenção aos documentos que ajudam a contar sua história de trabalho no campo.",
+    details: "A aposentadoria rural começa pela compreensão da sua realidade. Conversamos sobre sua trajetória e os documentos disponíveis para orientar os próximos passos, respeitando as particularidades de cada caso." },
+  { number: "03", title: "Auxílio-doença", icon: HeartHandshake, lead: "Acolhimento quando a saúde pede cuidado",
+    areas: ["Análise da situação apresentada", "Orientação sobre documentos médicos", "Acompanhamento do requerimento"],
+    summary: "Atendimento para quem precisa de orientação sobre benefícios por incapacidade e documentos para o INSS.",
+    details: "Quando questões de saúde afetam sua rotina de trabalho, uma orientação clara faz diferença. Nossa equipe ouve sua demanda, analisa os documentos e explica as possibilidades de acompanhamento do pedido de auxílio-doença." },
+  { number: "04", title: "Pensão por morte", icon: FileText, lead: "Respeito e sensibilidade em um momento delicado",
+    areas: ["Escuta da situação familiar", "Análise dos documentos disponíveis", "Orientação e acompanhamento do pedido"],
+    summary: "Uma conversa cuidadosa para esclarecer dúvidas sobre pensão e organizar os próximos passos.",
+    details: "A perda de um familiar pode trazer dúvidas sobre a pensão por morte. Oferecemos um atendimento acolhedor para compreender sua situação, organizar os documentos e orientar sobre o pedido, sempre com uma análise individual." },
+  { number: "05", title: "BPC / LOAS", icon: Scale, lead: "Informação acessível para quem precisa",
+    areas: ["Compreensão da situação pessoal e familiar", "Orientação sobre a documentação", "Acompanhamento do pedido assistencial"],
+    summary: "Orientação sobre o Benefício de Prestação Continuada, com atenção à realidade de cada pessoa.",
+    details: "O atendimento sobre BPC / LOAS oferece espaço para apresentar suas dúvidas e compreender os próximos passos. Nossa equipe analisa as informações e documentos disponíveis antes de orientar o acompanhamento adequado à sua situação." },
+  { number: "06", title: "Orientação previdenciária", icon: MessageCircle, lead: "Clareza para tomar decisões conscientes",
+    areas: ["Escuta da sua dúvida sobre o INSS", "Análise inicial dos documentos", "Explicações sobre os próximos passos"],
+    summary: "Nem toda dúvida sobre o INSS encontra resposta na internet. Converse com uma equipe que conhece sua história.",
+    details: "Desde 2005, a Silvânia Diniz Sociedade de Advogados atua em Previdenciário. Na consulta, você apresenta sua dúvida e recebe orientação individualizada sobre documentos, possibilidades de atuação e condições do atendimento." },
 ];
 
 const reviews = [
-  { author: "Nagila", quote: "Excelente atendimento. Profissional muito atencioso, explicou tudo com clareza e me deixou segura sobre o caso. Muito obrigada pelo suporte." },
-  { author: "Rafael Camargos", quote: "Sempre demonstrou atenção, clareza nas explicações e verdadeiro compromisso em ajudar. Recomendo sem hesitar." },
-  { author: "jane gomes", quote: "Advogado super atencioso, responde a todas as dúvidas, superou minhas expectativas. Super recomendo." },
-  { author: "Denize Oliveira", quote: "Profissional prestativo e expressa com muita clareza. Parabéns!!" },
-  { author: "Luara Lage", quote: "Sua clareza nas explicações e comprometimento fazem toda a diferença. Excelente advogado!" },
-  { author: "Julio Oliveira", quote: "Muito atencioso, ótimo profissional, sempre muito solicito. Pode confiar que é uma pessoa de boa índole e exemplar." },
+  { author: "Lúcia Maria França De Oliveira", quote: "Equipe muito profissional. Atendimento excelente, desde a secretatia ate a Dra Laura. Eficiencia, objetividade e pontualidade em tudo." },
+  { author: "Sara Silvaa", quote: "Escritório conta com profissionais excelentes, ambiente super acolhedor e atendimento personalizado. Super Indico." },
+  { author: "Reisile Almeida", quote: "A Dra Silvânia Diniz é uma excelente profissional, dedicada e muito competente. Fiquei muito satisfeita com o atendimento." },
+  { author: "Lais Regina", quote: "Escritório com um ótimo atendimento humanizado, muito prestativa e dedicada. Super Indico." },
+  { author: "Adriana Maria Garcia Bertolucci", quote: "Excelente! Ressalto a competência, educação, cuidado, interesse e profissionalismo. Dra. Ana Luiza é ótima advogada!" },
+  { author: "Adriano Anastacio", quote: "Ótimo atendimento explica muito bem todo o processo" },
 ];
 
 const questions = [
-  { title: "Como agendo um atendimento?", answer: "Entre em contato pelo WhatsApp (31) 99798-9797 e conte brevemente sua situação. Você receberá orientação sobre o agendamento, os documentos necessários e as condições do atendimento." },
-  { title: "O que devo levar à primeira conversa?", answer: "Se houver documentos, notificações ou informações sobre um processo, mencione-os ao agendar. O escritório orientará quais materiais são necessários para compreender sua demanda." },
+  { title: "Como agendo um atendimento?", answer: "Entre em contato pelo WhatsApp (35) 99115-4815 e conte brevemente sua situação. Você receberá orientação sobre o agendamento, os documentos necessários e as condições do atendimento." },
+  { title: "O que devo levar à primeira conversa?", answer: "Informe o benefício ou a dúvida que deseja esclarecer. Mencione documentos de trabalho, contribuições ao INSS e pedidos anteriores, se houver. Nossa equipe orientará quais materiais levar." },
   { title: "Posso apresentar minha dúvida pelo WhatsApp?", answer: "Sim. O WhatsApp é o canal para o primeiro contato com o escritório. Apresente sua dúvida e consulte a disponibilidade e o formato de atendimento adequado ao seu caso." },
-  { title: "Onde fica o escritório?", answer: "Na Av. Duque de Caxias, 1.389, 2º andar, bairro Quatorze de Fevereiro, em Itabira, Minas Gerais. CEP 35900-236. Entre em contato para agendar o atendimento presencial." },
+  { title: "Onde fica o escritório?", answer: "Na Rua Misseno de Pádua, 495, Centro, em Lavras, Minas Gerais. CEP 37200-142. Oferecemos atendimento presencial ou online, mediante agendamento." },
 ];
 
 const navigation = [
   ["Início", "#inicio"],
   ["Atuação", "#atuacao"],
-  ["O advogado", "#advogado"],
+  ["A equipe", "#equipe"],
   ["Escritório", "#escritorio"],
   ["Contato", "#contato"],
 ];
 
 function BrandMark({ compact = false }: { compact?: boolean }) {
-  return <Image src={logo} alt="Emmanuel Souza — Advogado — OAB/MG 232.059" sizes={compact ? "(max-width: 640px) 190px, 260px" : "(max-width: 640px) 240px, 300px"} className={compact ? "h-auto w-[190px] sm:w-[260px]" : "h-auto w-[240px] sm:w-[300px]"} />;
+  return <Image src={logo} alt="Silvânia Diniz Sociedade de Advogados — OAB/MG 7.814" sizes={compact ? "(max-width: 640px) 140px, 155px" : "(max-width: 640px) 240px, 280px"} className={compact ? "h-auto w-[140px] sm:w-[155px]" : "h-auto w-[240px] sm:w-[280px]"} />;
 }
 
 function Heading({
@@ -176,7 +185,7 @@ export default function Home() {
         </a>
 
         <header className="sticky top-0 z-40 border-b border-white/10 bg-night/95 text-white backdrop-blur-xl">
-          <div className="mx-auto flex h-[68px] max-w-7xl items-center justify-between gap-5 px-5 sm:h-[76px] sm:px-8 lg:px-12">
+          <div className="mx-auto flex h-[88px] max-w-7xl items-center justify-between gap-5 px-5 sm:h-[96px] sm:px-8 lg:px-12">
             <a
               href="#inicio"
               aria-label={`${officeName} — início`}
@@ -271,22 +280,22 @@ export default function Home() {
                 className="relative z-10 max-w-2xl lg:py-6"
               >
                 <motion.p variants={reveal} className="eyebrow-light mb-7">
-                  ADVOCACIA EM ITABIRA · MINAS GERAIS
+                  PREVIDENCIÁRIO DESDE 2005 · LAVRAS, MG
                 </motion.p>
                 <motion.h1
                   variants={reveal}
                   className="max-w-[730px] font-serif text-[2.85rem] leading-[1.02] tracking-[-0.045em] text-white sm:text-6xl lg:text-[4.6rem]"
                 >
-                  Defesa firme.<br />Orientação clara.<br />
-                  <em className="font-normal text-brand-300">Cuidado com você.</em>
+                  Sua aposentadoria.<br />Nossa dedicação.<br />
+                  <em className="font-normal text-brand-300">Compromisso com você.</em>
                 </motion.h1>
                 <motion.p
                   variants={reveal}
                   className="mt-7 max-w-xl text-[15px] leading-7 text-white/70 sm:text-base sm:leading-8"
                 >
-                  Dr. Emmanuel Carlos de Souza. Advocacia criminal e de família
-                  com escuta atenta, análise criteriosa e compromisso
-                  com cada etapa da sua história.
+                  Aposentadoria urbana e rural, auxílio-doença, pensão e BPC / LOAS.
+                  Uma equipe comprometida com pessoas, com orientação clara
+                  e atendimento presencial ou online.
                 </motion.p>
                 <motion.div
                   variants={reveal}
@@ -318,7 +327,7 @@ export default function Home() {
                 >
                   <span className="inline-flex items-center gap-2">
                     <MapPin size={15} className="text-brand-300" />
-                    Itabira · MG
+                    Lavras · MG
                   </span>
                   <span className="inline-flex items-center gap-2">
                     <Scale size={15} className="text-brand-300" />
@@ -341,26 +350,15 @@ export default function Home() {
                 <div className="relative aspect-[4/5] overflow-hidden bg-night">
                   <Image
                     src={portrait}
-                    alt="Dr. Emmanuel Carlos de Souza, advogado em Itabira"
+                    alt="Equipe da Silvânia Diniz Sociedade de Advogados, em Lavras"
                     fill
                     sizes="(max-width: 640px) 90vw, (max-width: 1024px) 70vw, 42vw"
                     className="object-cover object-top"
                     preload
                   />
-                  <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-night/90 to-transparent" />
-                  <figcaption className="absolute bottom-6 left-6 right-6 flex items-end justify-between gap-3 text-white sm:bottom-8 sm:left-8 sm:right-8">
-                    <div>
-                      <p className="font-serif text-2xl">Emmanuel Souza</p>
-                      <p className="mt-1 text-[10px] uppercase tracking-[0.17em] text-white/70">
-                        Advogado · OAB/MG 232.059
-                      </p>
-                    </div>
-                    <span className="grid size-11 shrink-0 place-items-center rounded-full border border-brand-200/70 text-brand-200">
-                      <Scale size={18} />
-                    </span>
-                  </figcaption>
+
                 </div>
-                <div className="absolute -left-3 bottom-[22%] border border-white/10 bg-night px-4 py-2.5 text-[10px] font-medium tracking-[0.1em] text-white shadow-card sm:-left-9 sm:px-5">
+                <div className="absolute -left-3 bottom-[8%] border border-white/10 bg-night px-4 py-2.5 text-[10px] font-medium tracking-[0.1em] text-white shadow-card sm:-left-9 sm:px-5">
                   ESCUTA. CLAREZA. COMPROMISSO.
                 </div>
               </motion.figure>
@@ -373,8 +371,8 @@ export default function Home() {
           >
             <div className="mx-auto grid max-w-7xl gap-6 px-5 py-7 sm:grid-cols-3 sm:gap-4 sm:px-8 lg:px-12">
               {[
-                ["232.059", "inscrição na OAB/MG"],
-                ["Itabira · MG", "sede do escritório"],
+                ["Desde 2005", "atuação em Previdenciário"],
+                ["Lavras · MG", "sede do escritório"],
                 [`${office.rating} / 5`, "avaliação no Google"],
               ].map(([value, label], index) => (
                 <div
@@ -410,7 +408,7 @@ export default function Home() {
               >
                 <Heading
                   eyebrow="ÁREAS DE ATUAÇÃO"
-                  description="Defesa, orientação e acompanhamento com atenção às particularidades de cada caso."
+                  description="Orientação previdenciária com atenção à sua trajetória de trabalho, à sua família e ao seu momento de vida."
                 >
                   Quando o direito encontra<br /><em className="font-normal text-brand-700">a sua história.</em>
                 </Heading>
@@ -466,22 +464,22 @@ export default function Home() {
             </div>
           </section>
 
-          <section id="advogado" className="scroll-mt-24 bg-white py-20 sm:py-28 lg:py-32">
+          <section id="equipe" className="scroll-mt-24 bg-white py-20 sm:py-28 lg:py-32">
             <div className="mx-auto grid max-w-7xl items-center gap-12 px-5 sm:px-8 lg:grid-cols-2 lg:gap-20 lg:px-12">
               <motion.figure initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.15 }} variants={reveal} className="relative mx-auto w-full max-w-[480px]">
-                <div className="relative aspect-[3/4] overflow-hidden bg-night">
-                  <Image src="/emmanuel-retrato.webp" alt="Dr. Emmanuel Carlos de Souza em retrato profissional" fill sizes="(max-width: 640px) 90vw, (max-width: 1024px) 65vw, 40vw" className="object-cover object-top" />
+                <div className="relative aspect-[4/5] overflow-hidden bg-night">
+                  <Image src="/imgi_30_755351983_18328181851256246_900542901525737837_n.jpg" alt="Equipe da Silvânia Diniz: por trás de cada atendimento, pessoas comprometidas com pessoas" fill sizes="(max-width: 640px) 90vw, (max-width: 1024px) 65vw, 40vw" className="object-cover object-top" />
                 </div>
                 <figcaption className="border-b border-brand-300 py-5">
-                  <p className="font-serif text-2xl sm:text-3xl">Dr. Emmanuel Carlos de Souza</p>
-                  <p className="mt-2 text-[10px] uppercase tracking-[0.15em] text-brand-700">Advogado · {office.registration}</p>
+                  <p className="font-serif text-2xl sm:text-3xl">Silvânia Diniz Sociedade de Advogados</p>
+                  <p className="mt-2 text-[10px] uppercase tracking-[0.15em] text-brand-700">Sociedade de Advogados · {office.registration}</p>
                 </figcaption>
                 <span aria-hidden="true" className="absolute -left-3 -top-3 size-20 border-l border-t border-brand-300 sm:-left-5 sm:-top-5" />
               </motion.figure>
               <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} variants={reveal}>
-                <Heading eyebrow="O ADVOGADO" description="Por trás de cada caso, existe uma pessoa que precisa ser ouvida.">Firmeza na atuação.<br /><em className="font-normal text-brand-700">Humanidade no atendimento.</em></Heading>
-                <p className="mt-6 text-[15px] leading-8 text-ink-soft">Em Itabira, o Dr. Emmanuel Carlos de Souza conduz uma advocacia que valoriza a atenção aos detalhes, o estudo de cada demanda e o diálogo com quem busca orientação.</p>
-                <p className="mt-4 text-[15px] leading-8 text-ink-soft">A proposta é simples: ouvir com cuidado, explicar com clareza e acompanhar com responsabilidade. Da primeira conversa às próximas etapas, sua história recebe um olhar individual.</p>
+                <Heading eyebrow="NOSSA EQUIPE" description="Por trás de cada caso, existe uma pessoa que precisa ser ouvida.">Experiência para orientar.<br /><em className="font-normal text-brand-700">Humanidade no atendimento.</em></Heading>
+                <p className="mt-6 text-[15px] leading-8 text-ink-soft">Desde 2005, a Silvânia Diniz Sociedade de Advogados atua em Previdenciário, em Lavras, Minas Gerais. Nosso compromisso é acolher suas dúvidas e oferecer uma orientação próxima, com atenção aos detalhes da sua história.</p>
+                <p className="mt-4 text-[15px] leading-8 text-ink-soft">Por trás de cada atendimento, existe uma equipe comprometida com pessoas. Ouvimos com cuidado, explicamos com clareza e acompanhamos cada etapa com responsabilidade, no atendimento presencial ou online.</p>
                 <div className="mt-9 space-y-5 border-t border-ink/10 pt-7">
                   {["Escuta atenta e respeito à sua realidade", "Explicações claras para decisões conscientes", "Dedicação e discrição em cada etapa"].map((item) => <p key={item} className="flex items-start gap-3 text-sm leading-6"><span className="mt-2 size-1.5 shrink-0 rounded-full bg-brand-500" />{item}</p>)}
                 </div>
@@ -498,10 +496,10 @@ export default function Home() {
               <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} variants={reveal} className="relative border border-brand-300/30 bg-night px-7 py-10 text-white sm:p-12">
                 <p className="eyebrow-light">NOSSA SEDE</p>
                 <div className="my-10 flex items-center justify-between border-y border-white/15 py-8">
-                  <div><p className="font-serif text-5xl text-brand-200">Itabira.</p><p className="mt-3 text-[10px] uppercase tracking-[0.2em] text-white/60">Minas Gerais</p></div>
+                  <div><p className="font-serif text-5xl text-brand-200">Lavras.</p><p className="mt-3 text-[10px] uppercase tracking-[0.2em] text-white/60">Minas Gerais</p></div>
                   <Scale size={62} strokeWidth={0.8} className="text-brand-300" aria-hidden="true" />
                 </div>
-                <address className="not-italic text-sm leading-8 text-white/75">Av. Duque de Caxias, 1.389<br />2º andar · Quatorze de Fevereiro<br />Itabira · MG · CEP 35900-236</address>
+                <address className="not-italic text-sm leading-8 text-white/75">Rua Misseno de Pádua, 495<br />Centro<br />Lavras · MG · CEP 37200-142</address>
                 <a href={mapsUrl} target="_blank" rel="noreferrer" className="mt-8 inline-flex items-center gap-3 border-b border-brand-300/60 pb-2 text-xs text-brand-200">Como chegar <ArrowUpRight size={15} /></a>
                 <span aria-hidden="true" className="absolute right-0 top-0 h-px w-28 bg-brand-300" />
               </motion.div>
@@ -525,7 +523,7 @@ export default function Home() {
                   variants={reveal}
                   className="mt-6 max-w-xl text-[15px] leading-7 text-ink-soft"
                 >
-                  Localizado na Avenida Duque de Caxias, em Itabira,
+                  Localizado na Rua Misseno de Pádua, no Centro de Lavras,
                   o escritório é um ponto de encontro para conversar
                   sobre suas dúvidas e compreender sua situação com tranquilidade.
                 </motion.p>
@@ -535,7 +533,7 @@ export default function Home() {
                 >
                   O primeiro contato pode ser feito pelo WhatsApp.
                   Consulte a disponibilidade, as condições do atendimento
-                  e os documentos necessários antes de agendar sua visita.
+                  e os documentos necessários para seu atendimento presencial ou online.
                 </motion.p>
                 <motion.a
                   variants={reveal}
@@ -562,7 +560,7 @@ export default function Home() {
               <div className="flex flex-col gap-7 border-b border-ink/10 pb-8 sm:flex-row sm:items-end sm:justify-between">
                 <Heading
                   eyebrow="AVALIAÇÕES PÚBLICAS"
-                  description="Atenção e clareza nas palavras de quem compartilhou sua experiência com o Dr. Emmanuel no Google."
+                  description="Acolhimento, atenção e profissionalismo nas palavras de quem compartilhou sua experiência com nossa equipe no Google."
                 >
                   A experiência no atendimento.
                 </Heading>
@@ -662,7 +660,7 @@ export default function Home() {
                 <Heading
                   eyebrow="CONTATO E LOCALIZAÇÃO"
                   light
-                  description="Apresente sua dúvida ao escritório e consulte as condições para uma orientação individual. Atendimento presencial em Itabira mediante agendamento."
+                  description="Apresente sua dúvida ao escritório e consulte as condições para uma orientação individual. Atendimento presencial em Lavras ou online, mediante agendamento."
                 >
                   Seu próximo passo começa com uma conversa.
                 </Heading>
@@ -691,21 +689,21 @@ export default function Home() {
                       Endereço
                     </p>
                     <p className="mt-1 font-serif text-2xl text-white">
-                      Itabira · MG
+                      Lavras · MG
                     </p>
                   </div>
                 </div>
                 <address className="mt-7 max-w-md not-italic text-[14px] leading-7 text-white/70">
-                  Av. Duque de Caxias, 1.389 · 2º andar
+                  Rua Misseno de Pádua, 495
                   <br />
-                  Quatorze de Fevereiro
+                  Centro
                   <br />
-                  Itabira · MG · CEP 35900-236
+                  Lavras · MG · CEP 37200-142
                 </address>
                 <div className="my-7 h-px bg-white/15" />
                 <div className="flex flex-wrap items-center justify-between gap-4">
                   <p className="text-xs text-white/60">
-                    Dr. Emmanuel Carlos de Souza
+                    Silvânia Diniz Sociedade de Advogados
                   </p>
                   <a
                     href={mapsUrl}
@@ -734,7 +732,7 @@ export default function Home() {
               <p className="mt-5 text-[10px] uppercase tracking-[0.15em] text-brand-200">{office.registration}</p>
               <p className="mt-4 max-w-xs text-xs leading-6 text-white/55">
                 Advocacia com clareza, responsabilidade e atenção à sua história.
-                Itabira, Minas Gerais.
+                Lavras, Minas Gerais.
               </p>
             </div>
             <div>
@@ -745,8 +743,8 @@ export default function Home() {
                 <a className="footer-link" href="#atuacao">
                   Áreas de atuação
                 </a>
-                <a className="footer-link" href="#advogado">
-                  O advogado
+                <a className="footer-link" href="#equipe">
+                  A equipe
                 </a>
                 <a className="footer-link" href="#escritorio">
                   O escritório
@@ -773,13 +771,14 @@ export default function Home() {
                   <MessageCircle size={14} /> WhatsApp
                 </a>
                 <a href={office.telephone} className="footer-link inline-flex items-center gap-2"><Phone size={14} /> {office.phoneDisplay}</a>
+                <a href={office.instagram} target="_blank" rel="noreferrer" className="footer-link inline-flex items-center gap-2"><Camera size={14} /> @advocaciasilvaniadiniz</a>
                 <a
                   href={mapsUrl}
                   target="_blank"
                   rel="noreferrer"
                   className="footer-link inline-flex items-start gap-2"
                 >
-                  <MapPin size={14} className="mt-0.5 shrink-0" /> Itabira · MG
+                  <MapPin size={14} className="mt-0.5 shrink-0" /> Lavras · MG
                 </a>
               </div>
             </div>

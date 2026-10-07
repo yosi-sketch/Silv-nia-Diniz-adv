@@ -16,15 +16,15 @@ const bodyFont = Plus_Jakarta_Sans({
   display: "swap",
 });
 
-const title = "Dr. Emmanuel Carlos de Souza | Itabira, MG";
-const description = "Dr. Emmanuel Carlos de Souza, OAB/MG 232.059. Advocacia criminal e de família em Itabira, MG. Orientação clara, escuta atenta e acompanhamento individual. Agende um atendimento.";
+const title = "Silvânia Diniz | Advocacia Previdenciária em Lavras, MG";
+const description = "Silvânia Diniz Sociedade de Advogados. Previdenciário desde 2005: aposentadoria urbana e rural, auxílio-doença, pensão e BPC / LOAS. Atendimento em Lavras e online.";
 
 export const metadata: Metadata = {
-  applicationName: "Dr. Emmanuel Carlos de Souza",
+  applicationName: "Silvânia Diniz Sociedade de Advogados",
   title, description,
-  keywords: ["Dr. Emmanuel Carlos de Souza", "Emmanuel Souza advogado", "advogado em Itabira", "advocacia criminal", "Tribunal do Júri", "Direito de Família", "consultoria jurídica", "OAB/MG 232.059"],
+  keywords: ["Silvânia Diniz", "advocacia previdenciária em Lavras", "aposentadoria urbana", "aposentadoria rural", "auxílio-doença", "pensão por morte", "BPC LOAS", "OAB/MG 7.814"],
   robots: { index: true, follow: true },
-  openGraph: { type: "website", locale: "pt_BR", title, description, siteName: "Dr. Emmanuel Carlos de Souza" },
+  openGraph: { type: "website", locale: "pt_BR", title, description, siteName: "Silvânia Diniz Sociedade de Advogados" },
   twitter: { card: "summary", title, description },
 };
 

@@ -13,7 +13,7 @@ export default function AppleIcon() {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          background: "#17191c",
+          background: "#141210",
         }}
       >
         <div
@@ -23,9 +23,9 @@ export default function AppleIcon() {
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
-            border: "2px solid #c79559",
+            border: "2px solid #d0a060",
             borderRadius: "22px",
-            color: "#ffe2a6",
+            color: "#ffe0b0",
             fontFamily: "Georgia, serif",
             fontSize: "70px",
             fontWeight: 700,
@@ -33,7 +33,7 @@ export default function AppleIcon() {
             paddingRight: "10px",
           }}
         >
-          ES
+          SD
         </div>
       </div>
     ),

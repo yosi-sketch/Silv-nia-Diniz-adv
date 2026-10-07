@@ -1,25 +1,31 @@
-# Dr. Emmanuel Carlos de Souza
+# Silvânia Diniz Sociedade de Advogados
 
-## Direção visual
+Site institucional de advocacia previdenciária em Lavras, Minas Gerais. Atendimento presencial e online. Atuação desde 2005, conforme o perfil fornecido pelo cliente.
 
-A identidade se baseia no monograma ES e na combinação de dourado e prata do logo enviado. Tema: dourado #c79559, claro #ffe2a6, prata #d8d9dc, dourado escuro #79522d, grafite #17191c e marfim #f8f6f1. Tipografia preservada: Cormorant Garamond e Plus Jakarta Sans. Tema Tailwind 4 em app/globals.css, com variáveis compartilhadas pelos componentes.
+## Desenvolvimento
 
-## Conteúdo
+Next.js 16, React 19, Tailwind CSS 4 e Framer Motion. Execute npm run dev para desenvolvimento, npm run lint e npm run build para validação. O tema Tailwind 4 é configurado com @theme inline em app/globals.css.
 
-Abertura com o retrato real do Dr. Emmanuel e a mensagem “Defesa firme. Orientação clara. Cuidado com você.” Quatro frentes de atendimento com detalhes em modais; apresentação individual do advogado; sede em Itabira; seis relatos reais; etapas de atendimento; dúvidas frequentes; contato e rodapé.
+## Identidade
 
-Nota 5,0 e 107 avaliações reproduzem o texto enviado. Telefone confirmado: +55 (31) 99798-9797. OAB/MG 232.059 consta no logo. Endereço: Av. Duque de Caxias, 1.389, 2º andar, Quatorze de Fevereiro, Itabira - MG, CEP 35900-236. E-mail, redes sociais, horários e domínio não informados.
+Logo fornecido em public/Logotipo Jurídico Dourado Silvânia Diniz.png. Paleta obtida por amostragem dos pixels dourados opacos: dourado #d0a060, claro #ffe0b0, bronze #79552f. Cores de apoio: grafite #141210, marfim #faf7f0, areia #e6d8bf. Cormorant Garamond nos títulos, em harmonia com o lettering serifado, e Plus Jakarta Sans no corpo.
 
-Direito Criminal, Tribunal do Júri e Direito de Família foram inferidos dos relatos de júris e divórcio no material enviado. Consultoria Jurídica apresenta o atendimento de orientação. A seleção de áreas precisa ser confirmada pelo profissional antes de publicar.
+As fotografias fornecidas já contêm textos e marca. São apresentadas no formato original 4:5, sem edição dos arquivos, com otimização responsiva por next/image. Hero: imgi_31_753605420_18327940165256246_2621489893635777785_n.jpg. Equipe: imgi_30_755351983_18328181851256246_900542901525737837_n.jpg. O terceiro post permanece disponível em public. Ícones da aplicação usam SD.
 
-## Assets
+## Conteúdo e contato
 
-Logo original em public/emmanuel-logo-original.png. Versão transparente preparada com ImageGen em public/emmanuel-logo.png, removendo o quadriculado gravado no fundo. Fotografias reais em WebP: emmanuel-hero.webp e emmanuel-retrato.webp, sem alterações de conteúdo. Enquadramento feito com object-fit. A sede é apresentada com endereço e link para o mapa. Ícones da aplicação atualizados para ES.
+Contatos em app/site-data.ts, conteúdo em app/page.tsx e metadados em app/layout.tsx.
 
-## Arquitetura
+- WhatsApp confirmado pelo cliente: (35) 99115-4815; link wa.me/5535991154815 com mensagem inicial.
+- Instagram: https://www.instagram.com/advocaciasilvaniadiniz/
+- Endereço: Rua Misseno de Pádua, 495, Centro, Lavras - MG, CEP 37200-142.
+- Registro exibido: OAB/MG 7.814, conforme o novo logo. Os posts antigos fornecidos exibem outro registro; adotou-se o logo solicitado.
+- E-mail, horários e domínio não fornecidos; campos omitidos.
 
-Next.js 16, React 19, Tailwind 4 e Framer Motion. Navegação por âncoras, animações de entrada, efeitos de hover e modais preservados. Conteúdo em app/page.tsx, contatos e indicadores centralizados em app/site-data.ts e metadados em app/layout.tsx. Sem serviços remotos ou novas dependências.
+Serviços baseados no perfil enviado: aposentadoria urbana e rural, auxílio-doença, pensão por morte, BPC / LOAS e orientação previdenciária. Cada serviço abre um modal com descrição do atendimento. Os textos descrevem serviços, sem prometer resultados ou criar critérios de elegibilidade.
 
-## Validação
+Nota 4,9 e 96 avaliações interpretadas do trecho fornecido “4,996 avaliações”. Indicadores estáticos, sem atualização automática. Seis depoimentos reproduzem o texto compartilhado. O link do Google Maps pesquisa o nome e o endereço.
 
-Lint e build de produção passaram sem erros. A página de produção foi verificada em 320, 390, 768, 1024 e 1440 pixels, sem transbordamento horizontal. Todos os links internos possuem destino. Os seis CTAs principais e os quatro CTAs dos modais usam o WhatsApp confirmado; os links telefônicos usam o mesmo número. Menu móvel, FAQ, os quatro modais, fechamento por Escape, contenção e restauração de foco e preferência de movimento reduzido foram verificados. Imagens carregadas e console sem erros. A varredura dos fontes não encontrou referências à identidade anterior. Capturas em outputs/emmanuel-desktop.jpg, outputs/emmanuel-mobile.jpg e outputs/emmanuel-full-page.jpg; relatório em outputs/validation.json.
+## Acessibilidade
+
+Navegação por âncoras, menu móvel, perguntas frequentes nativas, foco visível, modais com contenção e restauração de foco, fechamento por Escape e respeito à preferência de movimento reduzido.
